@@ -15,7 +15,6 @@ This is a solution to the [Stats preview card component challenge on Frontend Me
   - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -29,15 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Here's a screenshot of the stats component page from my view](/design/stats-component-screenshot.png)
 
 ### Links
 
@@ -51,73 +42,67 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+Nothing too crazy, although I did use the picture element for the first time. I guess it's used for the specific situation for when you have two images of the same but one's for desktop and one's for mobile. So I used the picture element to ensure responsiveness and so it wasn't using a background image or some weird stuff like that. And I used a technique that I saw in another solution of this to use mix-blend-mode to get the purple to show you through which I thought was genius
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<picture class="stats__image">
+  <source
+    media="(min-width: 600px)"
+    srcset="./images/image-header-desktop.jpg"
+  />
+  <img
+    src="./images/image-header-mobile.jpg"
+    alt="A group of people working together in a modern office space"
+  />
+</picture>
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.stats__image {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  position: relative;
+  background-color: var(--color-accent);
+}
+
+.stats__image > img {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+So as you can see the picture element is actually the purple background. Then the img element uses that mix-blend-mode to show through the purple background and with the picture element, it was genius!
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Honestly for this project, the tablet responsiveness is terrible. I'm not proud of it but I did my best and at least the text is readable. The image is what I'm concerned with, as it's not visible at all. I was wondering if I should just keep the card vertical
 
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
 - [Josh Comeau's CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/) - I would modify some of the things in this reset, like the line-height line, but otherwise it's a great reset for getting things started when working on any project!
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
-
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+I didn't actually use any AI. However I have a pro plan so I was able to hook up Codex into my workflow which will be useful for the future.
 
 **Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Noah D'Arcy](https://noahdarcy.dev)
+- Frontend Mentor - [@darcynoa](https://www.frontendmentor.io/profile/darcynoa) (I need to change my username lol)
+- Instagram - [@noahdarcy.dev](https://www.instagram.com/noahdarcy.dev)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

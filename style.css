@@ -192,12 +192,22 @@ main {
     max-width: 600px;
   }
 
+  .stats__content__title {
+    font-size: 2.25rem;
+  }
+
+  .stats__content__description {
+    font-size: 1rem;
+    padding-right: 3rem;
+  }
+
   .stats__content__stats {
-    flex-direction: row;
     padding-block: 0rem;
     padding-top: 4rem;
     width: 100%;
+    flex-direction: row;
     justify-content: start;
+    gap: 3.5rem;
   }
 }
 
